@@ -24,6 +24,19 @@ router.beforeEach((to, from, next) => {
 router.afterEach((to, from, next) => {
   window.scrollTo(0, 0)
 })
+// 数据排重
+function getFilterArray (array) {
+  const res = []
+  const json = {}
+  for( let i = 0; i<array.length; i++){
+    const _self = array[i];
+    if(!json[_self]) {
+      res.push(_self)
+      json[_self] = 1
+    }
+  }
+  return res
+}
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -35,3 +48,5 @@ new Vue({
     return h(App)
   }
 })
+
+export default getFilterArray

@@ -8,8 +8,8 @@
           <span v-if="cartList.length">{{ cartList.length }}</span>
         </router-link>
       </div>
-      <router-view></router-view>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 <script>

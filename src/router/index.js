@@ -13,6 +13,20 @@ const routers = [
         },
         component: (resolve) => require(['../page/list.vue'], resolve)
       },
+      {
+        path: '/product/:id',
+        meta: {
+          title: '商品详情'
+        },
+        component: (resolve) => require(['../page/product.vue'], resolve)
+      },
+      {
+        path: '/cart',
+        meta: {
+          title: '购物车'
+        },
+        component: (resolve) => require(['../page/cart.vue'], resolve)
+      }
     ]
   },
   // 当访问路径不存在时，自动跳转到主页
@@ -22,7 +36,7 @@ const routers = [
   },
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/list'
   }
 ]
 export default routers
